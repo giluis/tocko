@@ -1,3 +1,4 @@
+/*
 import matrixTests from "./matrix.test.js";
 import { ITestClass } from "./testinterface.js";
 import * as f from 'fs';
@@ -93,3 +94,4 @@ interface TestSuite{
     header: string,
     tests: Test[]
 }
+*/
