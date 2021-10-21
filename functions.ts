@@ -19,12 +19,36 @@ export class TestResult {
         
 }
 
+interface ITestReport {
+    suites: TestSuite[];
+}
+
 export default class TestReport {
     suites: TestSuite[]
     testCases: TestCase[];
     constructor(){
         this.suites = [];
         this.testCases = [];
+    }
+
+    static empty():TestReport{
+        return new TestReport();
+    }
+
+    static fromJson(json:ITestReport):TestReport {
+        let report= new TestReport();
+        report.suites = json.suites.map(s=>( {
+            name: s[ "name" ],
+            tests: s["tests"].map(t=>({
+                name: t["name"],
+                result: {
+                    passed: t.result.passed,
+                    msg: t.result.msg,
+                }
+            }))
+        } ))
+        return report;
+
     }
 
     test(testName:string, runnable: ()=>void):void{

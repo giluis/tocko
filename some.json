@@ -1,0 +1,17 @@
+{
+    "suites":[
+        {
+            "name":"Suiet 1asdfkj",
+            "tests":[
+                {
+                    "name":"Test 1asdlkj",
+                    "result":{
+                        "passed":true,
+                        "msg":"Passed tthis etsts"
+                    }
+                }
+            ]
+        }
+    ],
+    "testCases":[]
+}

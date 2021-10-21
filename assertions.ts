@@ -1,5 +1,4 @@
-const ASSERT_FALSE_DEFAULT_MESSAGE = "sHOUld Be fALsE";
-const ASSERT_TRUE_DEFAULT_MESSAGE = "SHoULd Be TRuE";
+const ASSERT_TRUE_DEFAULT_ERROR_MESSAGE = "SHoULd Be TRuE";
 
 export function fail(message:string):void {
     throw message;
@@ -7,7 +6,7 @@ export function fail(message:string):void {
 
 export function assert(bool:boolean,msg:string="") {
     if (!bool)
-        throw `assertTrue failed: ${msg||ASSERT_TRUE_DEFAULT_MESSAGE}`;
+        throw `assertTrue failed: ${msg||ASSERT_TRUE_DEFAULT_ERROR_MESSAGE}`;
 }
 
 

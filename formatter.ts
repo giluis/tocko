@@ -1,10 +1,7 @@
 import  TestReport, { TestCase, TestSuite } from "./functions.ts";
 
-export function formatReport(report: TestReport):string{
-    
-
+export default function formatReport(report: TestReport):string{
     const title = "================\n  Test Results  \n================\n\n" 
-
     const suites:string[] = report.suites.map(s=>formatSuite(s));
     return title + suites.reduce((acc,cur)=>acc + cur,"")
 }

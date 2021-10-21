@@ -1,0 +1,1 @@
+{"suites":[{"name":"Suite 1","tests":[{"name":"Test 1","result":{"passed":true,"msg":"Test Passed Successfully"}},{"name":"Test 2","result":{"passed":false,"msg":"Test Passed Successfully"}}]}],"testCases":[]}
