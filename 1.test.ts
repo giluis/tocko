@@ -5,7 +5,7 @@ suite("Suite 1",()=>{
         assert(true);
     })
     test("Test 2",()=>{
-        assert(false,"Should be false");
+        assert(false,"Test 2 should no be false");
         console.log("ii");
     })
 })

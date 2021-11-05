@@ -11,8 +11,8 @@ export function test(testName: string, runnable: () => void) {
     try {
         runnable();
         printTest(testName,false)
-    } catch(err){
-        printTest(testName,true,err.msg);
+    } catch({message}){
+        printTest(testName,true,message);
     }
 }
 
