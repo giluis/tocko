@@ -9,21 +9,16 @@ export function assert(bool:boolean,msg:string= ASSERT_TRUE_DEFAULT_ERROR_MESSAG
         throw new Error (  msg );
 }
 
-
 export function assertEquals<T,Q>(a:T,b:Q):void{
 	if (a instanceof Array && b instanceof Array)
 		assertArrayEquals(a as T[],b as Q[])
-	else if(! (a instanceof Array) || !(b instanceof Array)
-		throw new Error("One of the arguments was not an array")
 	else if (typeof a.equals === "function")
 		if(!a.equals(b))
 			throw new Error("Failed equals")
-	else
+	else{
 		if(a !== b)
 			throw new Error("expected did not equal result")
-		
-
-
+	}
 }
 
 
