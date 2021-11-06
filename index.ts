@@ -17,5 +17,6 @@ export function printTest(testName:string,isFailure:boolean,msg:string="Test Pas
     console.log(`\t${ testName } => ${isFailure?"FAILED":"PASSED"}: ${msg}\n`);
 }
 
+import {assertEquals} from "./assertions.ts"
 
 export * from "./assertions.ts";
