@@ -25,7 +25,7 @@ export function assertEquals(a:any,b:any):void{
 }
 
 
- function assertArrayEquals(expected:any[],result:any[]):void{
+export function assertArrayEquals(expected:any[],result:any[]):void{
     if(expected.length !== result.length)
         throw new Error ( `assertArrayEquals failed: arrays were different lengths \n expected.length -> ${expected.length} | result.length-> ${result.length}` );
     for(let i = 0; i < expected.length;i++){
