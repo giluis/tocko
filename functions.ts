@@ -1,22 +1,39 @@
-export interface TestSuite  {
-    name: string,
-    tests: TestCase[]
+export class TestSuite  {
+    name: string;
+    tests: TestCase[];
+    constructor(name:string,tests:TestCase[]=[]){
+        this.name = name;
+        this.tests = [ ...tests ];
+    }
+
+    didSuitePass():boolean{
+        let passed = true;
+        for (const test of this.tests){
+            passed = test.result.passed && passed;
+        }
+        return passed
+    }
+
 }
 
-export interface TestCase  {
-    name: string,
-    result: TestResult,
+export class TestCase  {
+    name: string;
+    result: TestResult;
+
+    constructor(name:string,result:TestResult){
+        this.name = name;
+        this.result = result;
+    }
 }
 
 export class TestResult {
     passed: boolean;
     msg: string;
 
-    constructor(passed=true,msg="Test Passed Successfully"){
+    constructor(passed=true,msg=""){
         this.passed  = passed;
         this.msg =msg;
     }
-        
 }
 
 export default class TestReport {
@@ -32,16 +49,13 @@ export default class TestReport {
             runnable()
             this.testCases.push({ name: testName, result:new TestResult() });
         } catch(err){
-            this.testCases.push({name:testName,result: new TestResult(false,err.msg) });
+            this.testCases.push({name:testName,result: new TestResult(false,err.message) });
         }
     }
 
     suite(suiteName:string,runnable:()=>void):void {
         runnable()
-        let suite:TestSuite= {
-            name: suiteName,
-            tests: [...this.testCases],
-        }
+        let suite:TestSuite= new TestSuite(suiteName,this.testCases)
         this.testCases = [];
         this.suites.push(suite);
     }

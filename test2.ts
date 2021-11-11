@@ -1,7 +1,7 @@
 import {suite,test,assert} from "./index.ts";
 
 
-suite("Suite 1",()=>{
+suite("Suite 3",()=>{
     test("Test 1",()=>{
         assert(true);
     })
@@ -10,7 +10,7 @@ suite("Suite 1",()=>{
     })
 })
 
-suite("Suite 2",()=>{
+suite("Suite 5",()=>{
     test("Test 3",()=>{
         assert(true);
     })
