@@ -29,8 +29,8 @@ export function assertArrayEquals(expected:any[],result:any[]):void{
         if(expected[i] !== result[i]){
             if(expected[i] instanceof Array && result[i] instanceof Array)
                 assertArrayEquals(expected[i],result[i]);
-            else 
-                throw new Error ( `Arrays differed: expected[${i}]->${expected[i]} | result[${i}] -> ${result[i]}` )   
+            else
+                throw new Error ( `Arrays differed: expected[${i}]->${expected[i]} | result[${i}] -> ${result[i]}` )
         }
     }
 }
